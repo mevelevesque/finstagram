@@ -1,7 +1,14 @@
+get '/' do
+  @finstagram_posts = FinstagramPost.order(created_at: :desc)
+  erb(:index)
+end
+
+
 #get '/' do
 #  File.read(File.join('app/views', 'index.html'))
 #end
 
+=begin
 def humanized_time_ago(minute_num)
   if minute_num >= 60
     "#{minute_num / 60} hours ago"
@@ -55,3 +62,5 @@ get '/' do
   erb(:index)
 
 end
+=end
+
